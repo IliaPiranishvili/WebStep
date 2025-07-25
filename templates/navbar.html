@@ -20,11 +20,11 @@
                         <a class="nav-link" href="https://www.udemy.com/course/master-java-python-c-c-all-in-one-programming-course/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Search_DSA_Alpha_Prof_la.EN_cc.ROW-English&campaigntype=Search&portfolio=ROW-English&language=EN&product=Course&test=&audience=DSA&topic=Python&priority=Alpha&utm_content=deal4584&utm_term=_._ag_162511578924_._ad_696197165265_._kw__._de_c_._dm__._pl__._ti_dsa-1705455366924_._li_9198325_._pd__._&matchtype=&gad_source=1&gad_campaignid=21168154302&gbraid=0AAAAADROdO0erq09_YwGiieZaYnCDxwqs&gclid=CjwKCAjw1ozEBhAdEiwAn9qbzbUej9anYYX-BLvPPdhUhiIiB4TiRb8gBnYgtfYtk9ikiJxNuNuUZxoCC7IQAvD_BwE&couponCode=PMNVD2525">Courses</a>
                     </li>
                     {% if current_user.role == "Admin" %}
-                    <button type="button" class="btn btn-danger me-3">Admin</button>
+                    <button type="button" class="btn btn-danger ms-3">Admin</button>
                     {% else current_user.role == "Guest" %}
-                    <button type="button" class="btn btn-success me-3" >Guest</button>
+                    <button type="button" class="btn btn-success ms-3" >Guest</button>
                     {% else%}
-                    <button type="button" class="btn btn-dark me-3" >User</button>
+                    <button type="button" class="btn btn-dark ms-3" >User</button>
                     {% endif %}
 
                 </ul>

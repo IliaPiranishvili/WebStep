@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | WebStep</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body class="bg-white">
+
+{% include "navbar.html" %}
+
+<div class="container-lg">
+    <div class="col-12"></div>
+
+        {% for alert in form.errors.values() %}
+        {% for error in alert %}
+        <div class="mx-auto alert alert-danger text-center">
+        <p> ● {{ error }} <br> </p>
+        </div>
+        {% endfor %}
+        {% endfor %}
+</div>
+
+<div class="container-sm rounded-2 bg-body-secondary mt-5 p-5 border shadow-lg" style="max-width: 600px; max-height: 1000px">
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="row pt-3">
+            {{ form.user( class="form-control", placeholder=form.user.label.text) }}
+        </div>
+        <div class="row pt-3">
+            {{ form.birthday( class="form-control",) }}
+        </div>
+        <div class="row pt-3">
+            {{ form.password( class="form-control", placeholder=form.password.label.text) }}
+        </div>
+        <div class="row pt-3">
+            {{ form.repeat_password( class="form-control", placeholder=form.repeat_password.label.text) }}
+        </div>
+        <div class="row p-5">
+            {{ form.submit( class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>

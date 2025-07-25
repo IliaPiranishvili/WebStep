@@ -1,0 +1,17 @@
+{% extends "Base.html" %}
+{% block title %}
+Details | WebStep
+{% endblock %}
+
+
+
+
+{% block container%}
+
+<div class="justify content-center"></div>
+<h2 class="text-center">{{product.name}}</h2>
+<div class="d-flex justify-content-center">
+<img src="{{ url_for('static', filename=product.img)}}" class="image-center" style="height: 300px; width: 300px;" alt=""></div>
+<div class="mx-auto mb-3 pb-5" style="width: 800px;">
+<i  style="width: 300px;"> {{product.dsc}}</i></div>
+{% endblock %}

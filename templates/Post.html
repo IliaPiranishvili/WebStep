@@ -1,0 +1,30 @@
+{% extends "Base.html" %}
+{% block title%}
+Post | WebStep
+{% endblock %}
+
+
+{% block container %}
+
+    <form method="post" enctype="multipart/form-data">
+        {{ form2.hidden_tag() }}
+       <div class="text-center"><p> <i class="text-danger"> პოსტი უნდა იყოს პროგრამულ ენებთან დაკავშირებული</i></p></div>
+         <div class="row p-3">
+             <i class="text-success">ატვირთეთ ფოტო</i>
+            {{ form2.img( class="form-control") }}
+        </div>
+        <div class="row p-3">
+            {{ form2.postname( class="form-control", placeholder= form2.postname.label.text) }}
+        </div>
+        <div class="row  p-3">
+            {{ form2.discribe( class="form-control", placeholder= form2.discribe.label.text) }}
+        </div>
+        <div class="row p-5">
+            {{ form2.button( class="btn btn-success") }}
+        </div>
+    </form>
+
+
+
+{% endblock %}
+

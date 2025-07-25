@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-body-secondary shadow">
+    <div class="container-md">
+
+        <a href="https://tbcbank.ge/ka/tbc-education"> <img src="{{ url_for('static', filename='TBC.png')}}"
+                                                            class="img-sm me-2" height="50" alt="...">
+        </a>
+
+            <a class="navbar-brand" href="/"><h1>WebStep</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.udemy.com/course/master-java-python-c-c-all-in-one-programming-course/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Search_DSA_Alpha_Prof_la.EN_cc.ROW-English&campaigntype=Search&portfolio=ROW-English&language=EN&product=Course&test=&audience=DSA&topic=Python&priority=Alpha&utm_content=deal4584&utm_term=_._ag_162511578924_._ad_696197165265_._kw__._de_c_._dm__._pl__._ti_dsa-1705455366924_._li_9198325_._pd__._&matchtype=&gad_source=1&gad_campaignid=21168154302&gbraid=0AAAAADROdO0erq09_YwGiieZaYnCDxwqs&gclid=CjwKCAjw1ozEBhAdEiwAn9qbzbUej9anYYX-BLvPPdhUhiIiB4TiRb8gBnYgtfYtk9ikiJxNuNuUZxoCC7IQAvD_BwE&couponCode=PMNVD2525">Courses</a>
+                    </li>
+                    {% if current_user.role == "Admin" %}
+                    <button type="button" class="btn btn-danger me-3">Admin</button>
+                    {% else %}
+                    <button type="button" class="btn btn-success me-3" >Guest</button>
+                    {% endif %}
+
+                </ul>
+
+                <div class="col-2.5 btn-group">
+                    {% if current_user.is_authenticated %}
+                    <a href="/logout">
+                        <button type="button" class="btn btn-outline-danger mr-5">გამოსვლა</button>
+                    </a>
+                    {% else %}
+                    <a href="/login">
+                        <button type="button" class="btn btn-outline-info mr-5">შესვლა</button>
+                    </a>
+                    <a href="/register">
+                        <button type="button" class="btn btn-outline-primary mr-5">რეგისტრაცია</button>
+                    </a>
+                    {% endif %}
+
+                </div>
+            </div>
+    </div>
+</nav>

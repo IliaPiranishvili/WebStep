@@ -21,7 +21,7 @@
                     </li>
                     {% if current_user.role == "Admin" %}
                     <button type="button" class="btn btn-danger ms-3">Admin</button>
-                    {% else current_user.role == "Guest" %}
+                    {% elif current_user.role == "Guest" %}
                     <button type="button" class="btn btn-success ms-3" >Guest</button>
                     {% else%}
                     <button type="button" class="btn btn-dark ms-3" >User</button>
